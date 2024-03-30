@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elaine Ng</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+    <style>
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .blinking {
+            animation: blink 1s infinite;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Computer Science Student at Northeastern University <span class="blinking">|</span></h1>
+    <script>
+        const text = "Elaine Ng";
+        const blinkingCursor = document.querySelector(".blinking");
+
+        function typeText() {
+            let index = 0;
+            const typeInterval = setInterval(function() {
+                blinkingCursor.style.display = index % 2 === 0 ? "inline-block" : "none";
+                document.querySelector("h1").textContent = text.slice(0, index);
+                index++;
+                if (index > text.length) {
+                    clearInterval(typeInterval);
+                    blinkingCursor.style.display = "none";
+                }
+            }, 100);
+        }
+
+        // Start typing after a delay (e.g., 2 seconds)
+        setTimeout(typeText, 2000);
+    </script>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <img src="elaine-web1.jpeg" alt="Elaine is currently working on the website you are accessing."/>
+    <p>Hello and welcome to my website! I am currently a rising sophomore at Northeastern University! This semester I am diving deep into Java and Object Oriented Programming.</p>
+
+    <h2>Recent</h2>
+    <img src="elaine-web2.png" alt="An image of code of html"/>
+    <p>I am currently taking Object Oriented Design, Mathematics of Data Models, and Logic and Computation. I am excited to start new projects with the languages that I am learning!</p>
+
+    <h2>Programming Languages:</h2>
+    <ul>
+        <li>HTML: Girls Who Code (Self-Paced Program)</li>
+        <li>CSS: Girls Who Code (Self-Paced Program)</li>
+        <li>JavaScript: Girls Who Code (Self-Paced Program)</li>
+        <li>Python: Northeastern University (Programming with Data, Mathematics of Data Models)</li>
+        <li>Racket: Northeastern University (Fundamentals of CS)</li>
+        <li>Java: Northeastern University (Fundamentals of CS II, Objected Oriented Design)</li>
+    </ul>
+</body>
+</html>
